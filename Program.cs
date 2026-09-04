@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Security.Cryptography.X509Certificates;
 using static System.Formats.Asn1.AsnWriter;
 
@@ -59,9 +59,9 @@ namespace Task6_CSharp
         #region Problem3
         public struct Employee
         {
-            private int EmpId;
+            private int empId;
             private string Name;
-            private int Salary;
+            private int salary;
 
             public string GetName()
             {
@@ -71,6 +71,17 @@ namespace Task6_CSharp
             {
                 this.Name = name;
             }
+            public int Salary
+            {
+                get { return salary; }
+                set { salary = value; }
+            }
+
+            public int EmpId
+            {
+                get { return EmpId; }
+                set { EmpId = value; }
+            } 
         }
 
         public static void Main(string[] args)
@@ -78,6 +89,9 @@ namespace Task6_CSharp
             Employee emp = new Employee();
             emp.SetName("John Doe");
             Console.WriteLine(emp.GetName()); // Output: John Doe
+
+            emp.Salary = 50000;
+            Console.WriteLine(emp.Salary);
         }
         //Question: Why is encapsulation critical in software design?  
         // Answer: 
